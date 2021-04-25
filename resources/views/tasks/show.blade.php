@@ -17,5 +17,10 @@
     
     {{-- 編集ページへのリンク --}}
     {!! link_to_route('tasks.edit', '編集', ['task' => $task->id], ['class' => 'btn btn-light']) !!}
+    
+    {{-- 削除フォーム --}}
+    {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
+        {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+    {!! Form::close() !!}
 
 @endsection
